@@ -34,8 +34,9 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String) {
     //here is how you add the color and add the padding for the surface
-    Surface (color = Color.Cyan, modifier = Modifier.padding(30.dp)) {
-        Text(text = "Is this your first android app... $name!")
+    Surface (color = Color.Cyan, modifier = Modifier.padding(0.dp)) {
+        //padding the text
+        Text(text = "Is this your first android app... $name!", modifier = Modifier.padding(30.dp))
     }
 }
 
