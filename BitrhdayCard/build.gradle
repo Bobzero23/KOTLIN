@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.birthdaycard2'
+    namespace 'com.example.bitrhdaycard'
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.birthdaycard2"
+        applicationId "com.example.bitrhdaycard"
         minSdk 21
         targetSdk 32
         versionCode 1

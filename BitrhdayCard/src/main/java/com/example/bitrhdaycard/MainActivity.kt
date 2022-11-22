@@ -1,4 +1,4 @@
-package com.example.birthdaycard2
+package com.example.bitrhdaycard
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -14,7 +14,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import com.example.birthdaycard2.ui.theme.MyApplicationTheme
+import com.example.bitrhdaycard.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +46,9 @@ fun BirthdayGreetingWithImage(message : String, from : String) {
     val image = painterResource(R.drawable.androidparty)
     Box {
         Image(painter = image, contentDescription = null,
-            modifier = Modifier.fillMaxHeight().fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxHeight()
+                .fillMaxWidth(),
             contentScale = ContentScale.Crop)
         BirthdayGreetingWithText(message = "Happy Birthday Bobzero", "-from TheProblem")
     }

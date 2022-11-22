@@ -1,4 +1,4 @@
-package com.example.birthdaycard2
+package com.example.bitrhdaycard
 
 import org.junit.Test
 
