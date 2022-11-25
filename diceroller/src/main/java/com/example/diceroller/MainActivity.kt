@@ -44,6 +44,7 @@ fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
         mutableStateOf(1)
     }
 
+    //displaying the images accordingly
     val imageResource = when(result) {
         1 -> R.drawable.dice_1
         2 -> R.drawable.dice_2
