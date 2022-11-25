@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
-import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.modifier.modifierLocalConsumer
@@ -38,17 +38,36 @@ fun DiceRoller() {
 
 @Composable
 fun DiceWithButtonAndImage(modifier: Modifier = Modifier) {
+    //we did all of this because we have to let the composable know that our value changes
+    //we will learn more about this in the next chapters
+    var result by remember {
+        mutableStateOf(1)
+    }
+
+    val imageResource = when(result) {
+        1 -> R.drawable.dice_1
+        2 -> R.drawable.dice_2
+        3 -> R.drawable.dice_3
+        4 -> R.drawable.dice_4
+        5 -> R.drawable.dice_5
+        else -> R.drawable.dice_6
+    }
+
     Column(
         modifier = modifier,
         //making the object at the center of the device screen
         horizontalAlignment = Alignment.CenterHorizontally) {
         //adding the image to our ui
-        Image(painter = painterResource(R.drawable.dice_1),
-            contentDescription = "1" )
+
+        Image(painter = painterResource(imageResource),
+            contentDescription = result.toString() )
+
         //adding a little space to our image
         Spacer(modifier = Modifier.height(16.dp))
+
         //adding the button to our image
-        Button(onClick = { /*TODO*/ }) {
+        Button(//displaying random number from 1 to 6 when clicked
+            onClick = {result = (1..6).random()}) {
             //here we call the string we created on the xml file
             Text(text = stringResource(R.string.roll))
         }
